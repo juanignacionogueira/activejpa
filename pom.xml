@@ -21,15 +21,15 @@
 	</properties>
 
 	<scm>
-		<developerConnection>scm:git:https://github.com/ActiveJpa/activejpa.git</developerConnection>
+		<developerConnection>scm:git@github.com:juanignacionogueira/activejpa.git</developerConnection>
 		<tag>activejpa-0.1.2-SNAPSHOT</tag>
 	</scm>
 
 	<developers>
 		<developer>
-			<id>ganeshs</id>
-			<name>Ganesh Subramanian</name>
-			<email>subramanian.ganesh@gmail.com</email>
+			<id>jnogueira</id>
+			<name>Juan Ignacio Nogueira</name>
+			<email>juanignacionogueira@gmail.com</email>
 		</developer>
 	</developers>
 
@@ -101,7 +101,7 @@
 			<plugin>
 				<groupId>com.github.github</groupId>
 				<artifactId>site-maven-plugin</artifactId>
-				<version>0.10-SNAPSHOT</version>
+				<version>0.12</version>
 				<configuration>
 					<message>Maven artifacts for ${project.version}</message>  <!-- git commit message -->
 					<noJekyll>true</noJekyll>                                  <!-- disable webpage processing -->
@@ -111,7 +111,7 @@
 						<include>**/*</include>
 					</includes>
 					<repositoryName>activejpa</repositoryName>      <!-- github repo name -->
-					<repositoryOwner>ActiveJpa</repositoryOwner>    <!-- github username -->
+					<repositoryOwner>juanignacionogueira</repositoryOwner>    <!-- github username -->
 					<merge>true</merge>
 				</configuration>
 				<executions>
