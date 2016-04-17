@@ -21,8 +21,9 @@
 	</properties>
 
 	<scm>
+		<url>https://github.com/juanignacionogueira/activejpa</url>
+		<connection>scm:git:git://github.com/juanignacionogueira/activejpa.git</connection>
 		<developerConnection>scm:git:https://github.com/juanignacionogueira/activejpa.git</developerConnection>
-		<tag>activejpa-0.1.2-SNAPSHOT</tag>
 	</scm>
 
 	<developers>
