@@ -21,7 +21,7 @@
 	</properties>
 
 	<scm>
-		<developerConnection>scm:git@github.com:juanignacionogueira/activejpa.git</developerConnection>
+		<developerConnection>scm:git:https://github.com/juanignacionogueira/activejpa.git</developerConnection>
 		<tag>activejpa-0.1.2-SNAPSHOT</tag>
 	</scm>
 
