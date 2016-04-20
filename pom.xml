@@ -3,14 +3,13 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.activejpa</groupId>
 	<artifactId>activejpa</artifactId>
-	<version>0.2.4-SNAPSHOT</version>
+	<version>0.2.5-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<name>ActiveJpa</name>
+	
 	<modules>
 		<module>activejpa-core</module>
 		<module>activejpa-test</module>
-		<module>activejpa-examples</module>
-		<module>activejpa-utils</module>
 	</modules>
 
 	<properties>
