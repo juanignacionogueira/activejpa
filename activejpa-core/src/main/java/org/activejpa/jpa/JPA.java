@@ -57,6 +57,10 @@ public class JPA {
 		this.manager = manager;
 	}
 
+	public EntityManager getManager() {
+		return this.manager;
+	}
+
 	@Deprecated
 	public void addPersistenceUnit(String persistenceUnitName) {
 		this.addPersistenceUnit(persistenceUnitName, true);

@@ -21,7 +21,6 @@ import javax.persistence.metamodel.ManagedType;
 import javax.persistence.metamodel.PluralAttribute;
 
 import org.activejpa.ActiveJpaException;
-import org.activejpa.jpa.JPA;
 import org.activejpa.util.BeanUtil;
 
 /**
@@ -188,7 +187,6 @@ public abstract class Model extends BaseObject {
 	 * @return
 	 */
 	public static EntityTransaction beginTxn() {
-		JPA.instance.getDefaultConfig().getContext().beginTxn();
 		return getEntityManager().getTransaction();
 	}
 
