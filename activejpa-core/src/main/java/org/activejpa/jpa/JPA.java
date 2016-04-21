@@ -3,15 +3,9 @@
  */
 package org.activejpa.jpa;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
 import javax.persistence.spi.PersistenceProvider;
 import javax.persistence.spi.PersistenceProviderResolverHolder;
 
@@ -23,10 +17,11 @@ public class JPA {
 
 	public static final JPA instance = new JPA();
 
-	@Deprecated
-	private JPAConfig defaultConfig;
-	@Deprecated
-	private Map<String, JPAConfig> configs = new HashMap<String, JPAConfig>();
+	// @Deprecated
+	// private JPAConfig defaultConfig;
+	// @Deprecated
+	// private Map<String, JPAConfig> configs = new HashMap<String,
+	// JPAConfig>();
 
 	private EntityManager manager;
 
@@ -61,64 +56,72 @@ public class JPA {
 		return this.manager;
 	}
 
-	@Deprecated
-	public void addPersistenceUnit(String persistenceUnitName) {
-		this.addPersistenceUnit(persistenceUnitName, true);
-	}
-
-	@Deprecated
-	public void addPersistenceUnit(String persistenceUnitName, boolean isDefault) {
-		this.addPersistenceUnit(persistenceUnitName, Collections.<String, String> emptyMap(), isDefault);
-	}
-
-	@Deprecated
-	public void addPersistenceUnit(String persistenceUnitName, Map<String, String> properties, boolean isDefault) {
-		EntityManagerFactory factory = this.createEntityManagerFactory(persistenceUnitName, properties);
-		this.addPersistenceUnit(persistenceUnitName, factory, isDefault);
-	}
-
-	@Deprecated
-	public void addPersistenceUnit(String persistenceUnitName, EntityManagerFactory factory) {
-		this.addPersistenceUnit(persistenceUnitName, factory, true);
-	}
-
-	@Deprecated
-	public void addPersistenceUnit(String persistenceUnitName, EntityManagerFactory factory, boolean isDefault) {
-		JPAConfig config = new JPAConfig(persistenceUnitName, factory);
-		if (isDefault) {
-			this.defaultConfig = config;
-		}
-		this.configs.put(persistenceUnitName, config);
-	}
-
-	@Deprecated
-	public JPAConfig getConfig(String configName) {
-		return this.configs.get(configName);
-	}
-
-	/**
-	 * @return the defaultConfig
-	 */
-	@Deprecated
-	public JPAConfig getDefaultConfig() {
-		return this.defaultConfig;
-	}
-
-	@Deprecated
-	public void close() {
-		List<JPAConfig> confs = new ArrayList<JPAConfig>();
-		confs.addAll(this.configs.values());
-		for (JPAConfig config : confs) {
-			config.close();
-			this.configs.remove(config.getName());
-		}
-	}
-
-	@Deprecated
-	protected EntityManagerFactory createEntityManagerFactory(String persistenceUnitName,
-			Map<String, String> properties) {
-		return Persistence.createEntityManagerFactory(persistenceUnitName, properties);
-	}
+	// @Deprecated
+	// public void addPersistenceUnit(String persistenceUnitName) {
+	// this.addPersistenceUnit(persistenceUnitName, true);
+	// }
+	//
+	// @Deprecated
+	// public void addPersistenceUnit(String persistenceUnitName, boolean
+	// isDefault) {
+	// this.addPersistenceUnit(persistenceUnitName, Collections.<String, String>
+	// emptyMap(), isDefault);
+	// }
+	//
+	// @Deprecated
+	// public void addPersistenceUnit(String persistenceUnitName, Map<String,
+	// String> properties, boolean isDefault) {
+	// EntityManagerFactory factory =
+	// this.createEntityManagerFactory(persistenceUnitName, properties);
+	// this.addPersistenceUnit(persistenceUnitName, factory, isDefault);
+	// }
+	//
+	// @Deprecated
+	// public void addPersistenceUnit(String persistenceUnitName,
+	// EntityManagerFactory factory) {
+	// this.addPersistenceUnit(persistenceUnitName, factory, true);
+	// }
+	//
+	// @Deprecated
+	// public void addPersistenceUnit(String persistenceUnitName,
+	// EntityManagerFactory factory, boolean isDefault) {
+	// JPAConfig config = new JPAConfig(persistenceUnitName, factory);
+	// if (isDefault) {
+	// this.defaultConfig = config;
+	// }
+	// this.configs.put(persistenceUnitName, config);
+	// }
+	//
+	// @Deprecated
+	// public JPAConfig getConfig(String configName) {
+	// return this.configs.get(configName);
+	// }
+	//
+	// /**
+	// * @return the defaultConfig
+	// */
+	// @Deprecated
+	// public JPAConfig getDefaultConfig() {
+	// return this.defaultConfig;
+	// }
+	//
+	// @Deprecated
+	// public void close() {
+	// List<JPAConfig> confs = new ArrayList<JPAConfig>();
+	// confs.addAll(this.configs.values());
+	// for (JPAConfig config : confs) {
+	// config.close();
+	// this.configs.remove(config.getName());
+	// }
+	// }
+	//
+	// @Deprecated
+	// protected EntityManagerFactory createEntityManagerFactory(String
+	// persistenceUnitName,
+	// Map<String, String> properties) {
+	// return Persistence.createEntityManagerFactory(persistenceUnitName,
+	// properties);
+	// }
 
 	/**
 	 * @return the cacheableHint
