@@ -158,23 +158,6 @@
 		</profile>
 
 		<profile>
-			<id>snapshots</id>
-			<activation>
-				<activeByDefault>true</activeByDefault>
-			</activation>
-			<properties>
-				<profile.deploymentType>snapshots</profile.deploymentType>
-			</properties>
-		</profile>
-
-		<profile>
-			<id>releases</id>
-			<properties>
-				<profile.deploymentType>releases</profile.deploymentType>
-			</properties>
-		</profile>
-
-		<profile>
 			<id>default-profile</id>
 			<activation>
 				<activeByDefault>true</activeByDefault>
